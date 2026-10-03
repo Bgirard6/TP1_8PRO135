@@ -132,3 +132,9 @@ void ATP1_8PRO135Character::LoseHealth()
 		Destroy();
 	}
 }
+
+
+void ATP1_8PRO135Character::GainScore()
+{
+	score += 10;
+}

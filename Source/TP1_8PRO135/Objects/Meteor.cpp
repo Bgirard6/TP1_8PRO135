@@ -5,6 +5,7 @@
 
 #include "Spawner.h"
 #include "TP1_8PRO135Character.h"
+#include "TP1_8PRO135PlayerController.h"
 #include "Kismet/GameplayStatics.h"
 
 // Sets default values
@@ -96,6 +97,11 @@ void AMeteor::LoseHealth()
 	
 	if (health <= 0)
 	{
+		ATP1_8PRO135Character* player = Cast<ATP1_8PRO135Character>(UGameplayStatics::GetPlayerCharacter(GetWorld(), 0));
+		if (player)
+		{
+			pla
+		}
 		Destroy();
 	}
 }

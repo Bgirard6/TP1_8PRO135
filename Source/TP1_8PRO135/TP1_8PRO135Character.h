@@ -101,5 +101,11 @@ public:
 	
 	UFUNCTION()
 	void LoseHealth();
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Data")
+	float score;
+	
+	UFUNCTION()
+	void GainScore();
 };
 
