@@ -54,6 +54,9 @@ public:
 
 	/** Constructor */
 	ATP1_8PRO135Character();	
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = true))
+	class UStaticMeshComponent* StaticMesh;
 
 protected:
 
@@ -96,7 +99,7 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Spawning")
 	TSubclassOf<ALaser> LaserClass;
 	
-	UPROPERTY(EditAnywhere, Category = "Health")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health")
 	int Health = 3;
 	
 	UFUNCTION()

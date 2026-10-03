@@ -11,12 +11,17 @@
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
 #include "TP1_8PRO135.h"
+#include "Kismet/KismetSystemLibrary.h"
 #include "Objects/Laser.h"
 
 ATP1_8PRO135Character::ATP1_8PRO135Character()
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
+	
+	StaticMesh = CreateDefaultSubobject<UStaticMeshComponent>("StaticMesh");
+	
+	StaticMesh->SetupAttachment(RootComponent);
 		
 	// Don't rotate when the controller rotates. Let that just affect the camera.
 	bUseControllerRotationPitch = false;
@@ -129,6 +134,7 @@ void ATP1_8PRO135Character::LoseHealth()
 	
 	if (Health <= 0)
 	{
+		UKismetSystemLibrary::QuitGame(GetWorld(), nullptr, EQuitPreference::Quit, false);
 		Destroy();
 	}
 }
