@@ -100,7 +100,7 @@ void AMeteor::LoseHealth()
 		ATP1_8PRO135Character* player = Cast<ATP1_8PRO135Character>(UGameplayStatics::GetPlayerCharacter(GetWorld(), 0));
 		if (player)
 		{
-			pla
+			player->GainScore();
 		}
 		Destroy();
 	}
