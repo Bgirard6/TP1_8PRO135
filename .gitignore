@@ -3,6 +3,8 @@
 
 .idea/
 
+.p4ignore
+
 # Compiled Object files
 *.slo
 *.lo
