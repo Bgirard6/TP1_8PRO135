@@ -59,6 +59,6 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Despawn")
 	int health = 2;
 	
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	void LoseHealth();
 };
